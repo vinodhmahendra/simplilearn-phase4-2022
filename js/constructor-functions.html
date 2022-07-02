@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>constructor functionss</title>
+    </head>
+
+    <body>
+        <script>
+            //console.log(typeof Object); // output function
+
+            //constructor function
+            // var Employee = function(name) {
+            //     this.name = name;
+            //     this.salary = 5000;
+            // }
+
+            // var newEmployee = new Employee('Vinodh Mahendra');
+            // console.log(typeof newEmployee); // output -- object
+
+
+            // var Employee = function ( name , boss) {
+            //     this.name = name;
+            //     this.boss = boss;
+            // }
+
+            // var newEmployee = new Employee('vinodh mahendra','bhavya');
+            // console.log(newEmployee.boss);
+
+            // var Employee = function(name) {
+            //     this.name = name;
+            //     this.salary = 5000;
+            //     this.giveRaise = function() {
+            //         // 1 mb
+            //     };
+                
+            // }
+            // var e1 = new Employee('vinodh mahendra');
+            // var e2 = new Employee('bhavya keshavulu');
+            // console.log(e1 === e2) ; // output : false
+            // console.log(e1.__proto__ === e2.__proto__); // output : true
+            // console.log(e1.giveRaise === e2.giveRaise); //output : false ! 100000 (danger)
+
+            // console.log(typeof Employee.prototype) ; // output : object
+            // console.log(Employee.prototype === Object.prototype); // output : false
+
+            // var Employee = function ( name ) {
+            //     this.name = name;
+            // };
+            // Employee.prototype.giveRaise = function() {
+            //     // give a salary raise for employee
+            // };
+            // var e1 = new Employee('vinodh mahendra');
+            // var e2 = new Employee('bhavya keshavulu');
+            // console.log(e1.giveRaise === e2.giveRaise); // output : true
+
+            var Employee = function ( name ) {
+                this.name = name;
+                this.salary = 50000;
+            };
+            Employee.prototype.giveRaise = function ( raise ) {
+                this.salary += raise;
+            };
+            var e1 = new Employee ( 'vinodh mahendra ');
+            var e2 = new Employee( 'bhavya keshavulu ');
+            e2.giveRaise ( 1000000 );
+            console.log( e1.salary );
+            console.log ( e2.salary );
+        </script>
+    </body>
+</html>
